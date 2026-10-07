@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#3C3B3B</color>
+    <color name="off_white">#C5C3C3</color>
+    <color name="blue">#03A9F4</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_blue">#8E9495</color>
+    <color name="primary_dark">#FFFFFF</color>
+    <color name="secondary_dark">#F0F0F0</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#4D4D4D</color>
+    <color name="text_dark">#1F2328</color>
+
+    <!-- Input Colors -->
+    <color name="input_background">#F0F0F0</color>
+    <color name="input_stroke">#CCCCCC</color>
+    <color name="input_stroke_focused">#8E9495</color>
+
+    <!-- Button Colors -->
+    <color name="button_primary">#8E9495</color>
+    <color name="button_google">#FFFFFF</color>
+</resources>

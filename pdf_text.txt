@@ -1,0 +1,488 @@
+                 Department of Computer Science 
+              Faculty of Computing and Information Technology (FCIT)                                                                   
+University of the Punjab 
+ 
+                                     HelmX 
+An AI Powered Smart Helmet 
+ 
+Final Year Project Proposal 
+ 
+ 
+ 
+Session 2025-2026 
+ 
+ 
+ 
+ 
+A project submitted in partial 
+fulfilment of the BS in Computer 
+Science 
+Fall 2025 
+ 
+09 September 2025 
+
+--PAGE--
+Page 2 of 17  
+Project Registration 
+ 
+ 
+ 
+Project ID (for office 
+use) 
+ 
+Nature of project [] Development [✓ ] R&D 
+Area of specialization Computer Vision, Web Development, Cloud, Android App 
+Development, AI and ML, IOT, Software and Hardware Integration 
+Project Group Members 
+Sr.# Reg. # Student Name CGPA Email ID Phone # Signature 
+(i) Group Leader 
+Bcsf22m512 
+Usman Azfar 3.92 Bcsf22m512@pucit.e
+du.pk 
+03214855864  
+(ii) Bcsf22m536 Hamza Ahmad 3.81 Bcsf22m536@pucit.e
+du.pk 
+03218444183  
+(iii) Bcsf22m505 Abdul Hanan 3.69 Bcsf22m505@pucit.e
+du.pk 
+03190610346  
+(iv) Bcsf22m541 Awais Imtiaz 3.33 Bcsf22m541@pucit.e
+du.pk 
+03261311726  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--PAGE--
+Page 3 of 17  
+Plagiarism Free Certificate 
+ 
+ 
+This is to certify that, I am Usman Azfar S/D/o Azfar Shafiq, group leader of FYP under 
+registration no BSCSF22M 512 at Computer Science Department, University of the 
+Punjab, Lahore. I declare that my FYP proposal is checked by my supervisor and the 
+similarity index is 4% that is less than 20%, an acceptable limit by HEC. Report is 
+attached herewith as Appendix A. 
+Date: September 16, 2025                    Name of Group Leader: Usman Azfar             
+Signature: 
+Name of Supervisor: Ms. Tayyaba Tariq        Co-Supervisor (if any): 
+ 
+Designation:  Designation:  
+Signature:  Signature:  
+ 
+ 
+ 
+ 
+ 
+--PAGE--
+Page 4 of 17  
+Project Abstract 
+ 
+Motorcycle accidents remain an important public health concern around the world,  
+and Pakistan reports more than 10,000 deaths annually due to road accidents, which 
+often involve two-wheeled vehicles. The HelmX project aims to address this pressing 
+challenge by developing an AI -backed system for motorcycles that aims to improve 
+rider safety, navigation, and the riding experience with real -time contextual 
+observational monitoring and intelligent feedback. The system will be comprised of 
+seven purposefully constructed main features: (1) Crash Detection utilizing sensors 
+embedded within the device such as accelerometers and gyroscopes to determine 
+impacts, automatically notifying the emergency services via GPS; (2) Drowsiness 
+Detection using com puter vision algorithms on front -facing camera images and 
+videos of the rider identifying both eye closure and head pose, which will generate 
+both audio and visual alerts; (3) Smart Navigation which optimizes real -time 
+recommendations and route suggestions  by avoiding traffic and incorporating 
+weather recommendations ; (4) Capture images or video s with the Dual Cameras 
+(front and rear) of the motorcycle that can constantly record veterinary observable 
+evidence, or at the request of the rider via voice comman d to provide images of the 
+environment; (5) Voice Control and Entertainment Systems capable of performing 
+online and offline commands for media playback, calls, and system controls, 
+adaptable to ambient sound conditions; (6) Safety and Environment Monitori ng 
+System measuring air quality, temperature, and allergens; they will ultimately 
+generate ride recommendations ; (7) Complete Web and android application  for ride 
+analytics. 
+Optional features, such as gesture -based controls and posture correction, fuel 
+estimation, and AI safety tutorials for maintenance, are expected to be prioritized 
+based on the projected timelines for development. Elements that are not addressed in 
+the context of the project include large -scale manufacturing of hardware, medical 
+validation of the health metrics, and advanced hardware like dynamic visor tint..  
+HelmX employs IoT sensors, AI algorithms, and user-centric interfaces, with the aim 
+of preventing accidents through alerts and information -driven conclusions to reduce 
+risk by a considerable perc entage. Rather than purely an academic initiative, this 
+project will have implications for sustainable transport systems of urban mobility in 
+developing nations.  
+Researchers will measure the results of the project based on the prototype's 
+functionality, accuracy of user testing (> 85% for detection), and supervisor/client 
+agreement. The research aims to enable riders the technology to prioritize safety 
+while not detracting from the positively perceived thrill of riding. 
+ 
+ 
+ 
+ 
+ 
+--PAGE--
+Page 5 of 17  
+ 
+1. Introduction 
+Motorcycle riders are among the most vulnerable users on the road, accounting for a 
+disproportionately high number of global traffic fatalities. The primary challenges 
+include limited visibility, rider fatigue, and t he cognitive overload of navigating 
+while operating a vehicle. Existing solutions, such as standard helmets and basic 
+Bluetooth devices, offer fragmented features but lack an integrated, intelligent 
+system capable of proactive accident prevention and post-incident response. 
+Helm X is a comprehensive solution for addressing safety challenges of motorcycle 
+riders. This project will design and develop a smart helmet that employs the use of 
+Artificial Intelligence and the internet of things to establish a smart er, intuitive riding 
+ecosystem. The specific goals of the project are to: 1) Create a robust hardware 
+prototype with embedded cameras, inertial measurement units (IMU) , a battery and 
+other related things ; 2) Implement the core AI algorithms to detect drowsiness, 
+analyze accidents, and utilize computer vision 3) Establish secure cloud 
+infrastructure for storing data and alerting in real-time; and 4) Create web and mobile 
+interfaces for visualizing data and enabling controls of the systems. Success will be 
+measured by the accurate functioning of the core AI models, the seamless integration 
+of all hardware and software components, and positive feedback from user 
+acceptance testing. 
+     
+2. Success Criterion 
+The following verifiable criteria will outline the success of the Helm X initiative:  
+ 
+1. Functional Prototype:  A working prototype of the helmet will be  delivered 
+with the successful implementation of at least the s even required core features 
+(Crash Detection,  Drowsiness Detection, Navigation, Dual Cameras, Voice 
+Control and Entertainment System, Safety System and Environment Monitoring 
+System).  
+2. AI Accuracy: The accuracy and recall rate of the drowsiness detection system 
+and crash detection system must be >90%  at least in controlled testing 
+environments and the crash detection algorithm must achieve a false positive 
+rate of <10%.  
+3. System Integration: The Android application and web portal will successfully 
+communicate with the prototype helmet displaying real -time data analytics, 
+historical analytics, and system configuration.  
+4. User Acceptance : The system must receive a positive score (e.g., >70 on the 
+System Usability Scale) from a pilot group of at least 20 test riders.  
+5. Documentation: Final submission must in clude complete technical 
+documentation and a research paper on the system's architecture and treatment 
+of AI.  
+ 
+ 
+--PAGE--
+Page 6 of 17  
+3. Related work 
+ 
+Research into motorcycle safety systems has thus far identified the promise of using                       
+AI, but does demonstrate opportunities for integrated, cost-effective solutions, thanks               
+to further collaboration within the developing context.  
+ 
+• In 2025, Kim et al. create d an AI -based smart motorcycle helmet that provided 
+drowsiness detection through EEG signals and facial recognition detection with a 
+92% accuracy, but was limited to helmet use without a navigation option [1].  
+• A 2023 Sentiance implementation demonstrated crash detection features using a 
+mobile device's sensors to provide alerts about a crash in real time. Their 
+approach appealed to privacy preserving ML while lacking good modeling and 
+safety system integrations in their approach [2].  
+• A 2025 study conducte d by Chigee, detailing an AIO -6 system to enhance 
+CarPlay AI, evaluated improved routing to destination through rider behavior, 
+but their AI based system did not provide rider ergonomics like posture 
+monitoring systems [3].  
+• The 2024 Rexing MTC1 study prov ides dual camera angle recording with a 
+1080p definition and allows for evidence collection, but it relies on perceptive 
+video evidence without AI or event tagging implementations [4].  
+• The 2024 study on voice and different entertainment systems highlighted the 
+advantages with Bluetooth controls and heads -up displays, however, adaptive 
+audio systems based on the traffic flow and noise level currently remain 
+unexplored [5]. 
+• The IoT-based crash alert system explored by Sharma et al. (2023) applies ML 
+systems to high-definition data compilations, while adding systems based on our 
+work with sensor fusion in designing a motorcycle safety system [6].  
+• The concept of AR for navigation in helmets has been pioneered by companies 
+like BMW, iC and Skully, but their solutions are prohibitively expensive and not 
+tailored for the broader market [7]. 
+ 
+ 
+Overall, there are features that meet the academic standards, however, we have yet to 
+create a comprehensive system that integrates core safety features with the added 
+details, for riders from low -resource communities.  HelmX will go  a step further, 
+combining these disparate features into a single, integrated, and cost -effective 
+solution. Unlike comm ercially available products, Helm X will  emphasize open, 
+modular design and utilizes the latest deep learning models to enhance accuracy in 
+real-world settings. Additionally, the development of a full -stack analytical platform 
+provides a value proposition n ot seen with available products or prototypes .
+--PAGE--
+Page 7 of 17  
+4. Project Rationale 
+HelmX evolved out of an urgency to apply technology to save lives in motorcycle 
+accidents. Motorcycles are 28 times more likely to result in fatalities than cars 
+because motorcyclists are oft en immobilized or unconscious before they can be 
+evaluated and treated. The initiative is relevant because it will address this gap by 
+providing instant automated alerts. The project is also intended to reduce the 
+cognitive load on riders and provide situa tional awareness while navigating and 
+performing other tasks in order to make riding less distracting while riding safer.  
+Ultimately, we are excited to execute a project that allows us to apply our expertise 
+and education related to AI , cloud and software engineering to a contemporary issue 
+that has social impact and social significance. We hope to learn about embedded 
+systems integration, the challenges related to deploying AI in resource -constrained 
+settings, and full stack product development processes specifically for ridesharing. 
+ 
+4.1 Aims and Objectives 
+The overarching aim is to create an intelligent helmet ecosystem that proactively 
+prevents accidents and ensures rapid response when they occur  as well as provide 
+entertainment and environmental awareness to rider. 
+ 
+Primary Objectives: 
+ 
+• To design and assemble a helmet prototype with integrated sensors (IMU, 
+cameras, microphone). 
+• Integrate dual cameras for evidence capture and voice-commanded media. 
+• To develop and train AI models for drowsiness and crash detection. 
+• To implement a real -time navigation system , voice control system and safety 
+system. 
+• To build a secure cloud backend for data processing and alerts. 
+• To integrate a personalized AI peer for communication and entertainment during 
+long tours 
+• Establish environment monitoring for air quality, temperature, weather which 
+then provides related suggestions. 
+• To develop an Android app and a responsive web dashboard. 
+ 
+ 
+ 
+4.2 Scope of the Project 
+ 
+The project's scope includes the end -to-end development of the Helm X system. 
+Deliverables include the physical prototype, all source code for the firmware, AI 
+models, mobile app, and web dashboard, along with full documentation.  
+ 
+--PAGE--
+Page 8 of 17  
+Inclusion: 
+ 
+In-scope features are the seven core functionalities: 
+• Smart crash detection system to indicate sudden movements or abnormal 
+movements indicative of crash and automatically triggers alerts to predefined 
+contacts with location data upon crash detection. 
+• Drowsiness Detection system using camera that detects drowsiness and fatigue 
+and issues real time alerts. 
+• Integrates GPS and AI -based navigation for real -time route guidance and 
+suggestions. 
+• Features dual cameras and IMUs for comprehensive environmental awareness. 
+Supports real -time video recording, live streaming, or image capture for safety 
+documentation and situational analysis. 
+• Enables hands -free operation through voice recognition for controlling 
+navigation, communication , or media playback. Includes an integrated 
+entertainment system for audio streaming (e.g., music, podcasts) via Bluetooth -
+connected devices. It may also include a real time AI peer as a ride companion. 
+• For safety and security, it will include proper authe ntication and authorization 
+and will generate real time alerts if theft is detected. 
+• Complete web application and android app application for real time analytics and 
+control. 
+ 
+Optional: 
+ 
+Several "Optional" features can also be included if time permits. These include: 
+• Gesture Control  
+• Posture Detection and suggestion 
+• Smart Sound Controlling according to traffic 
+• Distance Monitoring and Fuel Estimation system 
+• Smart Rider Feedback system 
+• Smart Public Awareness System of dangerous areas on road 
+• Solar Assisted Charging system 
+• Heads up Display with Augmented Reality 
+• Smart Speed Optimization System for constant speed with less brakes 
+• AI bike scanner and Tutorials provider to fix issues 
+• Smart Personalized Riding Coach 
+ 
+Exclusion: 
+ 
+Out-of-scope items include:  
+• Hardware manufacturing at scale 
+• Advanced hardware like dynamic tinting 
+• Medical-grade validation of health metrics 
+• Smart mesh network system with nearby riders 
+• Smart gamified safe ride score 
+• Smart battery optimization  
+• Research on effect of electromagnetic field from sensors and microcontrollers on 
+human health 
+--PAGE--
+Page 9 of 17  
+• Hardware life time due to environmental issues and privacy concerns and 
+international standards. 
+5. Proposed Methodology and Architecture 
+The project will follow an Agile development methodology with 2–4 week 
+sprints. The system architecture is divided into four layers: 
+ 
+• Hardware Layer:  In first phase complete hardware required will be 
+collected. The helmet unit equipped with camera s, IMU, G PS module, 
+battery, and relevant things will be collected. 
+• Edge AI Layer (Optional): On-device processing for real -time tasks 
+(drowsiness detection, crash detection) using TensorFlow Lite models to 
+minimize latency and cloud dependency. 
+• Cloud Layer: A secure AWS IoT Core an d Node.js backend to handle data 
+ingestion, storage (MongoDB), and send SMS/email alerts via Twilio API in 
+case of a crash. 
+• Application Layer: A React.js web dashboard and a Kotlin -based Android 
+app for users to view rides, analytics, and configure settings. 
+ 
+   
+ 
+ 
+Fig 5.1 Flowchart of System Architecture 
+ 
+
+--PAGE--
+Page 10 of 17  
+  5.1 Algorithms:  
+  A step-by-step process for a core feature, like crash detection, is:  
+(i) IMU data is continuously read  
+(ii) Data is fed into a pre -trained classifier on the edge 
+device 
+(iii) If a crash is predicted, the device triggers an alert 
+(iv) GPS coordinates and crash data are sent to the cloud 
+(v) The cloud service notifies emergency contacts and logs 
+the event. 
+ 
+ 
+ 
+ 
+        Similarly for drowsiness detection: 
+(i) The process begins by receiving a constant video feed 
+from the front-facing camera. 
+(ii) The video feed is processed by a computer vision 
+model, likely using libraries such a s OpenCV and a 
+Convolutional Neural Network (CNN). 
+(iii) The model extracts specific features from the video, 
+such as eye closure and head pose. 
+(iv) The extracted features are analyzed to determine if the 
+rider is drowsy. 
+(v) If drowsiness is detected, the system generates both 
+audio and visual alerts to notify the rider. 
+ 
+         
+        Furthermore, for smart route suggestion: 
+ 
+ 
+ 
+ 
+ 
+Fig 5.2 Crash Detection Flowchart 
+Fig 5.3 Drowsiness Detection Flowchart 
+Fig 5.4 Smart Route Suggestion Flowchart 
+--PAGE--
+Page 11 of 17  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 5.5 Full Development Life Cycle 
+--PAGE--
+Page 12 of 17  
+6. Individual Tasks 
+ 
+ 
+Team Member Activity Tentative Date 
+Usman Azfar Hardware Collection and Requirement Analysis,  
+Hardware and software inte gration, AWS cloud setup 
+and DevOps, Safety System , Voice Control  Agent and 
+Environmental Monitoring System, App Development  
+    7-8 Weeks 
+Hamza Ahmad Web development, app development, backend API 
+integration, deployment and t esting, edge computing,  
+database, ML models testing, Hardware and Software 
+integration, user feedback 
+    8-9 Weeks 
+Abdul Hanan Literature Review, ML models for crash and drowsiness 
+detection, real time alert and communication system, 
+smart navigation system, app development, 
+Documentation 
+ 
+    8-9 Weeks  
+Awais Imtiaz Literature review, requirements, hardware collection  and 
+integration, prototype deployment and testing, web 
+development, app development , API integration and 
+testing, documentation. 
+ 
+7-8 Weeks 
+ 
+ 
+7. Gantt Chart 
+--PAGE--
+Page 13 of 17  
+8. Tools and Technologies 
+ 
+• Programming: Python (ML), Kotlin (Android), JavaScript ( Entire MERN stack  
+for web).  
+• ML: TensorFlow Lite, OpenCV for vision, spaCy for voice NLP, Keras.  
+• Cloud & Database: AWS IoT Core, MongoDB, Twilio API 
+• Hardware: Appropriate cameras, sensors and edge computing according to 
+market(optional).  
+• Tools: Android Studio, VS Code, Git for version control, Figma, Docker, AWS.  
+• Others: Google Maps API, Turnitin for plagiarism. 
+ 
+ 
+9. References 
+[1] A. Gupta, “Real-Time Accident Detection Using Machine Learning,” in      Proc. 
+IEEE ICSCAN, 2021. 
+[2] S. Jaiswal, P. R. Jadhav, and A. R. Kale, “IoT based Vehicle Accident Detection 
+and Alerting System,” International Research Journal of Engineering and 
+Technology (IRJET) , vol. 2, no. 4, pp. 255 –258, 2015. [Online]. Availab le: 
+https://www.academia.edu/download/37757852/Irjet-v2i204.pdf 
+[3] A. Kumar, M. Bansal, and S. Gupta, “Implementation and Analysis of S mart 
+Helmet,” in Proc. IEEE International Conference on Computing, Communication 
+and Automation (ICCCA) , pp. 1 –4, 2017. [Online]. Available: 
+https://ieeexplore.ieee.org/abstract/document/8269660/ 
+[4] “IoT -Based Vehicle Accident Detection System,” International Journal of 
+Engineering and Technology (IJET), vol. 8, no. 2, pp. 10–15, 2022. 
+[5] R. Smith and P. Jones, “Heads -Up Displays in Automotive  Applications,” IEEE 
+Transactions on Vehicular Technology, vol. 69, no. 5, pp. 1234–1245, May 2020. 
+[6] A. Sharma and R. Singh, “A Smart Helmet for Accident Detection Using IoT and 
+Machine Learning and its Application in Applied Sciences,” Applied Sciences, vol. 
+11, no. 11, pp. 5039 –5056, 2021. [Online]. Available: https://www.mdpi.com/2076-
+3417/11/11/5039 
+ 
+ 
+ 
+ 
+ 
+--PAGE--
+Page 14 of 17  
+10. Appendix A 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--PAGE--
+Page 15 of 17  
+ 
+ 
+ 
+ 
+ 
+
+--PAGE--
+Page 16 of 17  
+
+--PAGE--
+Page 17 of 17  
+ 

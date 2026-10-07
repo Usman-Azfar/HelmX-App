@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HelmX Navigation Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Leaflet UI Library Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    
+    <style>
+        body { padding: 0; margin: 0; background: #0D1117;}
+        html, body, #map { height: 100%; width: 100vw; }
+        
+        /* Adjust Leaflet Routing display so it doesn't obstruct Android UI */
+        .leaflet-routing-container { display: none !important; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script>
+        var map = L.map('map').setView([0, 0], 2);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+            maxZoom: 19
+        }).addTo(map);
+
+        var currentMarker = null;
+        var routingControl = null;
+        var shouldSpeakRoute = false;
+
+        var navCursorIcon = L.divIcon({
+            className: 'custom-nav-cursor',
+            html: '<svg width="32" height="32" viewBox="0 0 24 24" fill="#00B4D8" stroke="#FFFFFF" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 22L12 18L22 22L12 2Z"/></svg>',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+        });
+
+        // Tracks live navigation status
+        var isNavigating = false;
+
+        // Called directly from native Android environment via JavascriptInterface
+        function updateLocation(lat, lng) {
+            var latlng = L.latLng(lat, lng);
+            if (!currentMarker) {
+                currentMarker = L.marker(latlng, { icon: navCursorIcon }).addTo(map);
+                map.setView(latlng, 15);
+            } else {
+                currentMarker.setLatLng(latlng);
+            }
+            if(isNavigating) {
+                map.setView(latlng, 18);
+            }
+        }
+
+        function startActiveNavigation() {
+            isNavigating = true;
+            if (currentMarker) map.setView(currentMarker.getLatLng(), 18);
+        }
+        
+        function stopActiveNavigation() {
+            isNavigating = false;
+            if (currentMarker) map.setView(currentMarker.getLatLng(), 15);
+        }
+
+        function routeTo(startLat, startLng, endLat, endLng) {
+            shouldSpeakRoute = true;
+            if (routingControl) {
+                map.removeControl(routingControl);
+            }
+            
+            // Generate visual routes directly without Javascript HTTP fetching
+            routingControl = L.Routing.control({
+                waypoints: [ L.latLng(startLat, startLng), L.latLng(endLat, endLng) ],
+                routeWhileDragging: false,
+                addWaypoints: false,
+                fitSelectedRoutes: false,
+                show: false,
+                createMarker: function(i, wp, nWps) {
+                    return null; // Prevents default draggable markers that cause recalculation loops on zoom/move
+                }
+            }).addTo(map);
+
+            // Focus on starting point immediately
+            map.setView([startLat, startLng], 16);
+
+            routingControl.on('routesfound', function(e) {
+                var routes = e.routes;
+                var summary = routes[0].summary;
+                
+                if(window.Android) {
+                    var distKm = (summary.totalDistance / 1000).toFixed(1);
+                    var timeMins = Math.round(summary.totalTime / 60);
+                    window.Android.onRouteCalculated(distKm, timeMins);
+                }
+
+                var instructions = routes[0].instructions;
+                if (instructions.length > 1 && window.Android && shouldSpeakRoute) { 
+                    shouldSpeakRoute = false; // Only speak the generation instruction once
+                    window.Android.speakInstruction("Route generated. " + instructions[0].text + ". Then, " + instructions[1].text); 
+                }
+            });
+            
+            routingControl.on('routingerror', function() {
+                if(window.Android) { window.Android.onRouteError("Unable to calculate route. Destination may be unreachable."); }
+            });
+        }
+    </script>
+</body>
+</html>

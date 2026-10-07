@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "516284618446",
+    "project_id": "helmx-5a42d",
+    "storage_bucket": "helmx-5a42d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516284618446:android:cbb813b8cf15f6da00229f",
+        "android_client_info": {
+          "package_name": "com.yourname.helmx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgKbbuShybBLoOD13-53TGQbY_-UuEsdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

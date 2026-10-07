@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:elevation="0dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- HelmX Logo and Name -->
+            <ImageView
+                android:id="@+id/ivAppLogo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_logo"
+                android:src="@mipmap/helmet" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/app_name"
+                android:textColor="@color/primary_blue"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+<!--             Menu Icon -->
+<!--            <ImageButton-->
+<!--                android:id="@+id/btnMenu"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:contentDescription="@string/menu"-->
+<!--                android:src="@drawable/ic_menu"-->
+<!--                app:tint="@color/text_primary" />-->
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- ScrollView for Dashboard Content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Dashboard Title -->
+            <TextView
+                android:id="@+id/tvDashboardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/dashboard"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Active Rides Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardActiveRides"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/secondary_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#30363D"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- Active Rides Icon and Label -->
+                    <ImageView
+                        android:id="@+id/ivActiveRidesIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_motorcycle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary_blue" />
+
+                    <TextView
+                        android:id="@+id/tvActiveRidesLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/active_rides"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivActiveRidesIcon"
+                        app:layout_constraintStart_toEndOf="@id/ivActiveRidesIcon"
+                        app:layout_constraintTop_toTopOf="@id/ivActiveRidesIcon" />
+
+                    <!-- Progress Ring (Circular Progress) -->
+                    <ProgressBar
+                        android:id="@+id/progressActiveRides"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="75"
+                        android:progressDrawable="@drawable/circular_progress"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Active Rides Value -->
+                    <TextView
+                        android:id="@+id/tvActiveRidesValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="3.50"
+                        android:textColor="@color/text_primary"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvActiveRidesLabel" />
+
+                    <!-- Active Rides Subtext -->
+                    <TextView
+                        android:id="@+id/tvActiveRidesSubtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/today"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvActiveRidesValue" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Total Distance Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTotalDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/secondary_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#30363D"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivDistanceIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_route"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary_blue" />
+
+                    <TextView
+                        android:id="@+id/tvDistanceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/total_distance"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivDistanceIcon"
+                        app:layout_constraintStart_toEndOf="@id/ivDistanceIcon"
+                        app:layout_constraintTop_toTopOf="@id/ivDistanceIcon" />
+
+                    <!-- Mini Bar Chart -->
+                    <LinearLayout
+                        android:id="@+id/llMiniChart"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_active" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDistanceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="0"
+                        android:textColor="@color/text_primary"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDistanceLabel" />
+
+                    <TextView
+                        android:id="@+id/tvDistanceUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/km"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvDistanceValue"
+                        app:layout_constraintStart_toEndOf="@id/tvDistanceValue" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Average Speed Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAvgSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/secondary_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#30363D"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivSpeedIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_speed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary_blue" />
+
+                    <TextView
+                        android:id="@+id/tvSpeedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/avg_speed"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivSpeedIcon"
+                        app:layout_constraintStart_toEndOf="@id/ivSpeedIcon"
+                        app:layout_constraintTop_toTopOf="@id/ivSpeedIcon" />
+
+                    <LinearLayout
+                        android:id="@+id/llSpeedChart"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_active" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSpeedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="20.45"
+                        android:textColor="@color/text_primary"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSpeedLabel" />
+
+                    <TextView
+                        android:id="@+id/tvSpeedUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/kmh"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvSpeedValue"
+                        app:layout_constraintStart_toEndOf="@id/tvSpeedValue" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Carbon Saved Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCarbonSaved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/secondary_dark"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#30363D"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivCarbonIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_leaf"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#4ADE80" />
+
+                    <TextView
+                        android:id="@+id/tvCarbonLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/carbon_saved"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivCarbonIcon"
+                        app:layout_constraintStart_toEndOf="@id/ivCarbonIcon"
+                        app:layout_constraintTop_toTopOf="@id/ivCarbonIcon" />
+
+                    <LinearLayout
+                        android:id="@+id/llCarbonChart"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_active" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="28dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/chart_bar_background" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvCarbonValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="31.22"
+                        android:textColor="@color/text_primary"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvCarbonLabel" />
+
+                    <TextView
+                        android:id="@+id/tvCarbonUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/kg_co2"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvCarbonValue"
+                        app:layout_constraintStart_toEndOf="@id/tvCarbonValue" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_dark"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:itemActiveIndicatorStyle="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

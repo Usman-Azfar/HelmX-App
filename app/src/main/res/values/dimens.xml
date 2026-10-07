@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="helmet_size">120dp</dimen>
+    <dimen name="app_name_size">36sp</dimen>
+    <dimen name="tagline_size">16sp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_corner_radius">12dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_corner_radius">28dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_sm">16dp</dimen>
+    <dimen name="spacing_md">24dp</dimen>
+    <dimen name="spacing_lg">32dp</dimen>
+    <dimen name="spacing_xl">40dp</dimen>
+</resources>

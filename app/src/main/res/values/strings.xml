@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">HelmX</string>
+    <string name="helmet_icon">Helmet Icon</string>
+    <string name="tagline">AI-Powered Smart Helmet</string>
+
+    <!-- Login Screen -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Log In</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="no_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign up</string>
+    <string name="bottom_tagline">Empowering safer journeys with\nreal-time AI analytics.</string>
+
+    <!-- Sign Up Screen -->
+    <string name="create_account">Create your account</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="terms_conditions">I agree to the Terms &amp; Conditions and Privacy Policy</string>
+    <string name="signup_with_google">Sign up with Google</string>
+    <string name="have_account">Already have an account? </string>
+
+    <!-- Dashboard -->
+    <string name="dashboard">Dashboard</string>
+    <string name="app_logo">App Logo</string>
+    <string name="menu">Menu</string>
+
+    <!-- Dashboard Cards -->
+    <string name="active_rides">Active Rides</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="avg_speed">Avg. Speed</string>
+    <string name="carbon_saved">Carbon Saved</string>
+    <string name="temperature">Temperature</string>
+    <string name="air_humidity">Air Humidity</string>
+
+    <!-- Units -->
+    <string name="today">Today</string>
+    <string name="km">km</string>
+    <string name="kmh">km/h</string>
+    <string name="kg_co2">kg CO₂</string>
+    <string name="celsius">°C</string>
+    <string name="percentage">%</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">Home</string>
+    <string name="analytics">Analytics</string>
+    <string name="navigation">Navigation</string>
+    <string name="settings">Settings</string>
+
+    <!-- Navigation Screen -->
+
+    <string name="map_view">Map View</string>
+    <string name="search">Search</string>
+    <string name="recenter">Recenter Map</string>
+    <string name="zoom_in">Zoom In</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="my_location">My Location</string>
+
+    <!-- Notification -->
+    <string name="notification_message">Notification</string>
+
+    <!-- Nantication Card -->
+    <string name="nantication">Nantication</string>
+    <string name="nantication_subtitle">Lorem ipsum tempus amet lorem incididunt eirmod.</string>
+    <string name="minutes">minutes</string>
+    <string name="progress_percentage">75/22%</string>
+
+    <!-- Movication Card -->
+    <string name="movication">Movication</string>
+
+    <!-- Settings Screen -->
+    <string name="back">Back</string>
+
+    <!-- Settings Options -->
+    <string name="dark_mode">Dark Mode</string>
+    <string name="crash_alerts">Crash Alerts &amp; Contacts</string>
+    <string name="crash_alerts_subtitle">Manage emergency contacts and crash sensitivity</string>
+    <string name="drowsiness_sensitivity">Drowsiness Sensitivity</string>
+    <string name="voice_entertainment">Voice &amp; Entertainment</string>
+    <string name="environment_monitor">Environment Monitoring</string>
+    <string name="privacy_permissions">Privacy &amp; Permissions</string>
+    <string name="profile_setup">Profile Setup</string>
+
+    <!-- Section Headers -->
+    <string name="helmet_features_header">Helmet Features</string>
+    <string name="account_privacy_header">Account &amp; Privacy</string>
+</resources>
